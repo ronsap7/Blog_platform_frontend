@@ -6,9 +6,14 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
 import Row from 'react-bootstrap/Row';
+import './css/inputMask.css';
 
 function InputMask() {
   const [validated, setValidated] = useState(false);
+  const [image, setImage] = useState();
+  const [imageURL, setImageURL] = useState();
+  const [authorImage, setAuthorImage] = useState();
+  const [authorImageURL, setAuthorImageURL] = useState();
   const [formData, setFormData] = useState({
     author: '',
     authorPic: '',
@@ -31,6 +36,18 @@ function InputMask() {
     }
 
     setValidated(true);
+  };
+
+  const handleAuthorImageChange = (event) => {
+    console.log(event.target.files[0]);
+    setAuthorImage(event.target.files);
+    setAuthorImageURL(URL.createObjectURL(event.target.files[0]));
+  };
+
+  const handleImageChange = (event) => {
+    console.log(event.target.files[0]);
+    setImage(event.target.files);
+    setImageURL(URL.createObjectURL(event.target.files[0]));
   };
 
   return (
@@ -60,30 +77,54 @@ function InputMask() {
         </Row>
 
         <Row className='mb-3'>
-          <Form.Group as={Col} md='6' controlId='authorPic'>
+          <Form.Group
+            className='d-flex flex-column justify-content-center'
+            as={Col}
+            md='6'
+            controlId='authorPic'
+          >
             <Form.Label>Authorimage</Form.Label>
-            <Form.Control type='file' />
+            <Form.Control type='file' onChange={handleAuthorImageChange} />
           </Form.Group>
+          <Col>
+            <img src={authorImageURL} alt='' className='author-image' />
+          </Col>
         </Row>
         <Row>
           <img src='' alt='' />
         </Row>
 
         <Row className='mb-3'>
-          <Form.Group as={Col} md='6' controlId='imgURL'>
+          <Form.Group
+            className='d-flex flex-column justify-content-center'
+            as={Col}
+            md='6'
+            controlId='imgURL'
+            onChange={handleImageChange}
+          >
             <Form.Label>Image</Form.Label>
             <Form.Control type='file' />
           </Form.Group>
+
+          <Col></Col>
         </Row>
-        <Row>
-          <img src='' alt='' />
+        <Row className='d-flex justify-content-center'>
+          <Col md={6}>
+            {imageURL ? (
+              <img src={imageURL} alt='' className='blog-image}' />
+            ) : (
+              <></>
+            )}
+          </Col>
         </Row>
 
         <Row className='mb-3'>
           <Form.Group as={Col} md='6' controlId='text'>
             <Form.Label>Text</Form.Label>
             <Form.Control
+              as='textarea'
               type='textarea'
+              rows={15}
               placeholder='This is your post...'
               required
             />
