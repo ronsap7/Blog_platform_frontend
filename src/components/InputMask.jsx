@@ -53,6 +53,7 @@ function InputMask() {
   return (
     <Container>
       <Form
+        className='my-5'
         noValidate
         validated={validated}
         onSubmit={handleSubmit}
@@ -111,7 +112,7 @@ function InputMask() {
         <Row className='d-flex justify-content-center'>
           <Col md={6}>
             {imageURL ? (
-              <img src={imageURL} alt='' className='blog-image}' />
+              <img src={imageURL} alt='' className='blog-image' />
             ) : (
               <></>
             )}
@@ -124,7 +125,7 @@ function InputMask() {
             <Form.Control
               as='textarea'
               type='textarea'
-              rows={15}
+              rows={10}
               placeholder='This is your post...'
               required
             />
@@ -134,7 +135,9 @@ function InputMask() {
           </Form.Group>
         </Row>
 
-        <Button type='submit'>Submit Form</Button>
+        <Button className='mb-4' type='submit'>
+          Submit Form
+        </Button>
       </Form>
     </Container>
   );
