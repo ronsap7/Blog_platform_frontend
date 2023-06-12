@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import InputMask from "./components/InputMask";
@@ -19,6 +20,7 @@ function App() {
       </Routes>
     </>
   );
+
 }
 
 export default App;
