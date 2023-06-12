@@ -14,8 +14,12 @@ export default function Navigation() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home" ><h1>CROSSOVER&nbsp;BLOG</h1></Navbar.Brand>
+          {/* <Navbar.Brand href="#home" ><h1>CROSSOVER&nbsp;BLOG</h1></Navbar.Brand> */}
           <Nav className="me-auto">
+          <NavLink to="/">
+              <div className="m-5">Home</div>
+            </NavLink>
+
             <NavLink to="/create">
               <div className="m-5">Create</div>
             </NavLink>
