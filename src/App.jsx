@@ -1,12 +1,8 @@
-
-import './App.css'
+import './App.css';
+import InputBlogPost from './components/InputBlogPost';
 
 function App() {
-  
-  return (
-    <>
-     </>
-  )
+  return <InputBlogPost></InputBlogPost>;
 }
 
-export default App
+export default App;
