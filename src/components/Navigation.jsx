@@ -28,14 +28,14 @@ export default function Navigation() {
               <div className="m-5">my&nbsp;Posts</div>
             </NavLink>
           </Nav>
-          <InputGroup size="sm" className="mb-3">
+          {/* <InputGroup size="sm" className="mb-3">
             <Form.Control
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
             />
                         <InputGroup.Text id="inputGroup-sizing-sm">search</InputGroup.Text>
 
-          </InputGroup>
+          </InputGroup> */}
         </Container>
       </Navbar>
     </>
