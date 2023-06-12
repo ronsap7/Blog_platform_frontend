@@ -7,6 +7,10 @@
 
 .blog-image {
   display: block;
-  width: 200px;
+  width: 100%;
   height: auto;
+}
+
+.form-label {
+  font-weight: 500;
 }
