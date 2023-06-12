@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 
 import Row from 'react-bootstrap/Row';
 
-function InputBlogPost() {
+function InputMask() {
   const [validated, setValidated] = useState(false);
   const [values, setValues] = useState({
     author: '',
@@ -89,4 +89,4 @@ function InputBlogPost() {
   );
 }
 
-export default InputBlogPost;
+export default InputMask;
