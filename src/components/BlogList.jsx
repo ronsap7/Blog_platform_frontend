@@ -16,7 +16,7 @@ export default function BlogList() {
       .then(function (response) {
         const rsp = response.data.data;
 
-        console.log(rsp);
+       // console.log(rsp);
         setBlogs(rsp);
       })
       .catch((error) => console.error(error));
